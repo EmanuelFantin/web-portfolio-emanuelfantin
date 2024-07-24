@@ -4,6 +4,21 @@
         document.querySelector('.nav-list').classList.toggle('active');
     });
 
+//Copiar o enviar gmail
+
+    document.getElementById('sendEmail').addEventListener('click', function() {
+        window.location.href = 'mailto:fantinemanuel@gmail.com';
+    });
+
+    document.getElementById('copyEmail').addEventListener('click', function() {
+        const email = 'fantinemanuel@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+            alert('Correo copiado al portapapeles');
+        }, (err) => {
+            alert('Error al copiar el correo: ', err);
+        });
+    });
+
 // Seccion Proyectos
 
 let currentSlide = 0;
@@ -31,6 +46,15 @@ function prevSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
+});
+
+// Descargar mi CV
+
+document.getElementById('downloadCV').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = './CurriculumVitae_EmanuelFantin.pdf'; // Reemplaza con la ruta real a tu archivo PDF
+    link.download = 'CurriculumVitae_EmanuelFantin.pdf'; // Nombre del archivo descargado
+    link.click();
 });
 
 // Formulario de contacto (EmailJS)
