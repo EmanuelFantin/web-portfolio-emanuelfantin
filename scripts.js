@@ -48,14 +48,68 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
 });
 
-// Descargar mi CV
+// Ventana emergente
+document.addEventListener('DOMContentLoaded', () => {
+    const projectButtons = document.querySelectorAll('.project-button');
+    projectButtons.forEach(button => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        openPopup(this.href);
+      });
+    });
+  });
+  
+  function openPopup(url) {
+    document.getElementById('popup-iframe').src = url;
+    document.getElementById('popup').style.display = 'flex';
+  }
+  
+  function closePopup() {
+    document.getElementById('popup-iframe').src = '';
+    document.getElementById('popup').style.display = 'none';
+  }
+  
 
-document.getElementById('downloadCV').addEventListener('click', function() {
-    const link = document.createElement('a');
-    link.href = './CurriculumVitae_EmanuelFantin.pdf'; // Reemplaza con la ruta real a tu archivo PDF
-    link.download = 'CurriculumVitae_EmanuelFantin.pdf'; // Nombre del archivo descargado
-    link.click();
+// Funciones del CV
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('cv-modal');
+    const cvIframe = document.getElementById('cv-iframe');
+    const viewCVButton = document.getElementById('viewCV');
+    const closeCVButton = document.getElementById('closeCV');
+    const downloadCVButton = document.getElementById('downloadCV');
+    
+    // Mostrar la ventana emergente del CV
+    viewCVButton.addEventListener('click', function() {
+        cvIframe.src = './CurriculumVitae_EmanuelFantin.pdf'; // Reemplaza con la ruta real a tu archivo PDF
+        modal.style.display = 'flex';
+    });
+
+    // Cerrar la ventana emergente
+    closeCVButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+        cvIframe.src = ''; // Limpiar el src para detener la carga del iframe
+    });
+
+    // Descargar el CV
+    downloadCVButton.addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.href = './CurriculumVitae_EmanuelFantin.pdf'; // Reemplaza con la ruta real a tu archivo PDF
+        link.download = 'CurriculumVitae_EmanuelFantin.pdf'; // Nombre del archivo descargado
+        link.click();
+    });
+
+    // Cerrar la ventana emergente si se hace clic fuera de ella
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            cvIframe.src = ''; // Limpiar el src para detener la carga del iframe
+        }
+    });
 });
+
+
+
 
 // Formulario de contacto (EmailJS)
 
