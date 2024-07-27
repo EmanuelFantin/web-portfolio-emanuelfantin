@@ -6,9 +6,9 @@
 
 //Copiar o enviar gmail
 
-    document.getElementById('sendEmail').addEventListener('click', function() {
-        window.location.href = 'mailto:fantinemanuel@gmail.com';
-    });
+document.getElementById('sendEmail').addEventListener('click', function() {
+    window.open('mailto:fantinemanuel@gmail.com?Subject=Ví%20tú%20portafolio%20en%20linea%20y%20quisiera%20ponerme%20en%20contacto', '_blank');
+});
 
     document.getElementById('copyEmail').addEventListener('click', function() {
         const email = 'fantinemanuel@gmail.com';
