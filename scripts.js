@@ -1,8 +1,19 @@
 /* Menu Hamburguesa */
 
-    document.getElementById('mobile-menu').addEventListener('click', function() {
-        document.querySelector('.nav-list').classList.toggle('active');
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.querySelector('.nav-list').classList.toggle('active');
+});
+
+// Obtener todos los enlaces dentro de la lista de navegación
+const navLinks = document.querySelectorAll('.nav-list li a');
+
+// Agregar un evento de clic a cada enlace
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Esconder el menú después de hacer clic en un enlace
+        document.querySelector('.nav-list').classList.remove('active');
     });
+});
 
 //Copiar o enviar gmail
 

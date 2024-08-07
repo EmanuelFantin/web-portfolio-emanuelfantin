@@ -113,7 +113,7 @@ i {
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--navbar-anim);
+  background-color: rgba(63, 69, 53, 0.9);
   margin: 4px 0;
   transition: 0.4s;
 }
@@ -129,7 +129,7 @@ i {
       right: 0;
       height: 160%;
       width: 101%;
-      background-color: rgba(255, 249, 249, 0.9);
+      background-color: rgba(63, 69, 53, 0.9);
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
@@ -147,6 +147,11 @@ i {
 
   .nav-list.active {
       display: flex;
+  }
+
+  .navbar-logo img {
+    max-width: 110px; /* ajustar el tamaño al necesario */
+    height: auto;
   }
 }
 
@@ -184,19 +189,19 @@ html {
 #banner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;;
   height: 99vh;
   margin-top: 60px; /* Ajustar para el navbar */
   padding: 20px;
 }
 
-.text-banner{
+.text-banner {
   display: grid;
   place-items: center;
 }
 
 .perfilbanner {
-  background-image: url(./img/2.png) ;
+  background-image: url(./img/2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -214,34 +219,59 @@ html {
   transform: translateY(-15px);
 }
 
-@media (max-width: 720px) {
+/* Media query para pantallas más pequeñas */
+@media (max-width: 1200px) {
   .perfilbanner {
-    height: 15vh;
-    width: 20vh;
+    height: 50vh;
+    width: 50vh;
   }
 }
 
-/* Estilo de los íconos sociales */
-
-.social-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-right: 20px;
+@media (max-width: 992px) {
+  .perfilbanner {
+    height: 40vh;
+    width: 40vh;
+  }
 }
 
-.social-icons a {
-  color: white;
-  font-size: 30px;
-  margin: 10px 0;
-  text-decoration: none;
+@media (max-width: 768px) {
+  .perfilbanner {
+    height: 35vh;
+    width: 35vh;
+    border-radius: 50% 70% / 60% 20%;
+  }
 }
 
-.social-icons a:hover {
-  color: var(--color-principal);
+@media (max-width: 576px) {
+  .perfilbanner {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 50% 60% / 50% 30%;
+  }
 }
 
+@media (max-width: 400px) {
+  .perfilbanner {
+    height: 25vh;
+    width: 25vh;
+    border-radius: 50% 50% / 50% 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  #banner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .text-banner {
+    text-align: center;
+    margin-top: 20px; /* Ajuste de margen para separación */
+  }
+}
 
 /*Copiar o enviar gmail*/
 
@@ -324,7 +354,7 @@ footer .container-footer{
 .social-footer a {
   color: white;
   font-size: 25px;
-  margin: 15px;
+  margin: 20px;
   text-decoration: none;
 }
 
@@ -450,20 +480,20 @@ footer .container-footer{
 
   /* Javascript */
 
-  .javascript, .bootstrap, .visual, .html, .css, .sass, .git, .github, .node, .font, .react {
+  .javascript, .bootstrap, .visual, .html, .css, .sass, .git, .github, .node, .font, .react, .typescript, .expressjs {
     position: relative;
     display: grid;
     place-items: center;
     width: 90px;
     height: 90px;
   }
-  .react img, .javascript img, .bootstrap img, .visual img, .html img, .css img, .sass img, .git img, .github img, .node img, .font img {
+  .expressjs img, .typescript img, .react img, .javascript img, .bootstrap img, .visual img, .html img, .css img, .sass img, .git img, .github img, .node img, .font img {
     width: 90%; 
     height: 90%;
     transition: transform 0.3s ease;
   }
   
-  .react img:hover, .javascript img:hover, .bootstrap img:hover, .visual img:hover, .html img:hover, .css img:hover, .sass img:hover, .git img:hover, .github img:hover, .node img:hover, .font img:hover {
+  .expressjs img:hover, .typescript img:hover, .react img:hover, .javascript img:hover, .bootstrap img:hover, .visual img:hover, .html img:hover, .css img:hover, .sass img:hover, .git img:hover, .github img:hover, .node img:hover, .font img:hover {
     transform: scale(1.1);
   }
   
@@ -474,7 +504,11 @@ footer .container-footer{
     75% {clip: rect(0, 100px, 100px, 98px);}
   }
   
-  .javascript::before, .javascript::after, .bootstrap::before, .bootstrap::after, .visual::before, .visual::after, .html::before, .html::after, .css::before, .css::after, .sass::before, .sass::after, .git::before, .git::after, .github::before, .github::after, .node::before, .node::after, .font::before, .font::after, .react::before, .react::after {
+  .javascript::before, .javascript::after, .bootstrap::before, .bootstrap::after, 
+  .visual::before, .visual::after, .html::before, .html::after, .css::before, .css::after, 
+  .sass::before, .sass::after, .git::before, .git::after, .github::before, .github::after, 
+  .node::before, .node::after, .font::before, .font::after, .react::before, .react::after, 
+  .typescript::before, .typescript::after, .expressjs::before, .expressjs::after {
     content: "";
     position: absolute;
     top: 0;
@@ -496,6 +530,8 @@ footer .container-footer{
   .node::before, .node::after { box-shadow: inset 0 0 0 2px #7dcb00e0; }
   .font::before, .font::after { box-shadow: inset 0 0 0 2px #007fc9; }
   .react::before, .react::after { box-shadow: inset 0 0 0 2px #5fbaef; }
+  .typescript::before, .typescript::after { box-shadow: inset 0 0 0 2px #007fc9; }
+  .expressjs::before, .expressjs::after { box-shadow: inset 0 0 0 2px #f7df1c; }
 
 /* formulario de contacto */
 
@@ -506,7 +542,7 @@ footer .container-footer{
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 95%;
 }
 
 form {
