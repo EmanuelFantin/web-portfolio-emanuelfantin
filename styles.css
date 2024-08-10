@@ -219,6 +219,22 @@ html {
   transform: translateY(-15px);
 }
 
+.recorrido {
+  display: inline-block;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+}
+
+.recorrido:hover {
+  background-color: #9ff088;
+}
+
+
 /* Media query para pantallas más pequeñas */
 @media (max-width: 1200px) {
   .perfilbanner {
@@ -531,7 +547,7 @@ footer .container-footer{
   .font::before, .font::after { box-shadow: inset 0 0 0 2px #007fc9; }
   .react::before, .react::after { box-shadow: inset 0 0 0 2px #5fbaef; }
   .typescript::before, .typescript::after { box-shadow: inset 0 0 0 2px #007fc9; }
-  .expressjs::before, .expressjs::after { box-shadow: inset 0 0 0 2px #f7df1c; }
+  .expressjs::before, .expressjs::after { box-shadow: inset 0 0 0 2px #0051ff; }
 
 /* formulario de contacto */
 
