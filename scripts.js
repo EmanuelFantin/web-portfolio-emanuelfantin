@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mostrar la ventana emergente del CV
     viewCVButton.addEventListener('click', function() {
-        cvIframe.src = './CurriculumVitae_EmanuelFantin.pdf'; // Reemplaza con la ruta real a tu archivo PDF
+        cvIframe.src = './CurriculumVitae_EmanuelFantin.pdf';
         modal.style.display = 'flex';
     });
 

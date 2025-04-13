@@ -42,6 +42,15 @@ i {
   color: white;
 }
 
+.card-text {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1.1em; 
+  font-weight: 500; 
+}
+
 /* Estilo del Navbar */
 
 #navbar {
@@ -548,6 +557,59 @@ footer .container-footer{
   .react::before, .react::after { box-shadow: inset 0 0 0 2px #5fbaef; }
   .typescript::before, .typescript::after { box-shadow: inset 0 0 0 2px #007fc9; }
   .expressjs::before, .expressjs::after { box-shadow: inset 0 0 0 2px #0051ff; }
+
+
+/* Estilo de servicios */
+
+.servicios-section {
+  padding: 80px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.servicios-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.servicio {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+}
+
+.servicio h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #9dc934;
+}
+
+.servicio p {
+  font-size: 1em;
+  color: #555;
+}
+
+.servicio-icon {
+  font-size: 2.5em;
+  color: #9dc934;
+  margin-bottom: 15px;
+}
+
 
 /* formulario de contacto */
 
