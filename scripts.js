@@ -91,11 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-
-// Formulario de contacto (EmailJS)
-
+// Formulario de contacto (EmailJS) 
 (function() {
     emailjs.init('OdqqeBcsIs2mY2rzP');
 })();
@@ -103,9 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validaciones adicionales
+    if (name === '') {
+        document.getElementById('status').innerText = 'Por favor, ingrese su nombre.';
+        return;
+    }
+
+    if (email === '') {
+        document.getElementById('status').innerText = 'Por favor, ingrese su correo electrónico.';
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        document.getElementById('status').innerText = 'Por favor, ingrese un correo electrónico válido.';
+        return;
+    }
+
+    if (message === '') {
+        document.getElementById('status').innerText = 'Por favor, ingrese su mensaje.';
+        return;
+    }
+
+    if (message.length < 10) {
+        document.getElementById('status').innerText = 'El mensaje debe tener al menos 10 caracteres.';
+        return;
+    }
 
     // Parametros del Email
     const templateParams = {
